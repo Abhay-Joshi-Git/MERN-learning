@@ -1,0 +1,26 @@
+{
+  "name": "mern-learning",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "engines": {
+    "node": "8.2.1",
+    "npm": "5.3.0"
+  },
+  "scripts": {
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Abhay-Joshi-Git/MERN-learning.git"
+  },
+  "author": "Abhay Joshi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Abhay-Joshi-Git/MERN-learning/issues"
+  },
+  "homepage": "https://github.com/Abhay-Joshi-Git/MERN-learning#readme",
+  "dependencies": {
+    "express": "^4.15.3"
+  }
+}
