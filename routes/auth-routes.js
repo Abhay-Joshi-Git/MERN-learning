@@ -9,14 +9,23 @@ module.exports = app => {
 
   app.get('/auth/google/callback', passport.authenticate('google'),
     (req, res) => {
-      console.log('redirecting...', req.headers);
-      if (req.headers.referer) {
-        res.redirect(req.headers.referer);
+      if (process.env.NODE_ENV === 'development') {
+        console.log('in dev - redirecting')
+        res.redirect('http://localhost:3006/' + 'surveys');
       } else {
-        res.redirect('/');
+        res.redirect('/surveys');
       }
-      
     }
   );
+
+  app.get('/api/get-user', (req, res) => {
+    console.log('in get user')
+    res.send(req.user);
+  });
+
+  app.get('/api/logout', (req, res) => {
+    req.logout();
+    res.send('');
+  });
 
 }
