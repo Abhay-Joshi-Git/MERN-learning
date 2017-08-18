@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class HomeComponent extends Component {
   componentWillReceiveProps(props) {
-    if (this.props.auth !== props.auth) {
+    if (this.props.auth !== props.auth && (props.auth)) {
       console.log('got auth', props.auth);
       this.props.history.push('/surveys');
     }

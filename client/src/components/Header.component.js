@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import app_config from '../config/app-config';
 import Payments from './Payments';
+import { logOut } from '../actions/auth';
 
 const ToolBarLi = (props) => {
   return (
@@ -30,7 +31,9 @@ class HeaderComponent extends Component {
     <ul className={toolBarClassName}>
       <ToolBarLi><Payments /></ToolBarLi>
       <ToolBarLi>Credits Available: {this.props.auth.credits}</ToolBarLi>
-      <ToolBarLi><a>Logout</a></ToolBarLi>
+      <ToolBarLi><a onClick={() => {
+        this.props.logOut();
+      }}>Logout</a></ToolBarLi>
     </ul> :
     <ul className={toolBarClassName}>
       <li><a href={app_config.google_auth} referrerPolicy="origin" >sign in with google</a></li>
@@ -40,4 +43,4 @@ class HeaderComponent extends Component {
 
 const mapStateToProps = ({ auth }) => ({ auth });
 
-export default connect(mapStateToProps)(HeaderComponent);
+export default connect(mapStateToProps, { logOut })(HeaderComponent);
