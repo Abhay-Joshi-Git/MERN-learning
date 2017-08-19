@@ -14,7 +14,7 @@ mongoose.connect(config.mongoDBURL);
 let app = express();
 app.use(bodyParser.json());
 app.use(cookieSession({
-  maxAge: 24 * 60 *60 * 10000,
+  maxAge: 24 * 60 * 60 * 10000,
   keys: [config.cookieKey]
 }));
 app.use(passport.initialize());
@@ -28,7 +28,7 @@ if (process.env.NODE_ENV === 'production') {
 
   const path = require('path');
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index'));
+    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
   });
 }
 
