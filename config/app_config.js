@@ -9,5 +9,7 @@ module.exports = {
   stripe: {
     pub_key: process.env.MERN_EMAILY_STRIPE_PUB_KEY,
     secret_key: process.env.MERN_EMAILY_STRIPE_SECRETE_KEY
-  }
+  },
+  sendGridKey: process.env.MERN_EMAILY_SENDGRID_KEY,
+  redirectDomain: process.env.MERN_EMAILY_REDIRET_DOMAIN
 }
