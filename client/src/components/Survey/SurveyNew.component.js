@@ -3,6 +3,7 @@ import { Field, reduxForm } from 'redux-form';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { sendServey } from '../../actions/survey';
+import { withRouter } from 'react-router-dom';
 import './SurveyNew.css';
 
 import SurveyFormField from './SurveyFormField.component';
@@ -27,8 +28,9 @@ class SurveyNewComponent extends Component {
   }
 
   sendSurvey = (values) => {
-    console.log('form submit ', values, this.props.values);
-    this.props.sendServey(values);
+    this.props.sendServey(values, () => {
+      this.props.history.push('/surveys');
+    });
   }
 
   getFields() {
@@ -61,4 +63,4 @@ let SurveyFormComponent = reduxForm({
   validate
 })(SurveyNewComponent);
 
-export default connect(null, { sendServey })(SurveyFormComponent);
+export default connect(null, { sendServey })(withRouter(SurveyFormComponent));
