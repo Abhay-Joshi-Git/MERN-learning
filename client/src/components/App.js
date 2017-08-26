@@ -4,10 +4,11 @@ import { BrowserRouter, Route, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 import HomeComponent from './Home.component';
-import SurveysComponent from './Surveys.component';
+import SurveysComponent from './Survey/Surveys.component';
 import HeaderComponent from './Header.component';
 
 import { auth } from '../actions/auth';
+import SurveyNewComponent from './Survey/SurveyNew.component';
 
 class App extends Component {
   componentDidMount() {
@@ -22,6 +23,7 @@ class App extends Component {
             <HeaderComponent />
             <Route exact path="/" component={HomeComponent} />
             <Route exact path="/surveys" component={SurveysComponent} />
+            <Route exact path="/survey/new" component={SurveyNewComponent} />
           </div>
         </BrowserRouter>
       </div>

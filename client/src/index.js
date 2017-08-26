@@ -5,6 +5,12 @@ import App from './components/App';
 import store from './store';
 import { Provider } from 'react-redux';
 
+window.jQuery = require('jquery');
+window.$ = require('jquery');
+require('materialize-css/dist/js/materialize.js');
+require('materialize-css/js/initial.js');
+
+
 ReactDOM.render(
   <Provider store={store}>
     <App />

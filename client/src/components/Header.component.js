@@ -15,6 +15,7 @@ const ToolBarLi = (props) => {
 
 class HeaderComponent extends Component {
   render() {
+    console.log('in header render');
     return (
       <nav>
         <div className="nav-wrapper">

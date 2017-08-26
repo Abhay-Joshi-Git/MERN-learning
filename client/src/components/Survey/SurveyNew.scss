@@ -1,0 +1,13 @@
+.form-container {
+  width: 80%;
+  margin: 20px auto;
+  padding: 20px;
+  background: lighten(lightgray, 16%);
+  box-shadow: 1px 1px 1px 1px gray;
+}
+.input-field input.survey-field-input, .input-field textarea {
+  margin: 0px;
+}
+.input-field {
+  padding: 0px 0px 20px 0px;
+}
